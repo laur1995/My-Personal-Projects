@@ -48,10 +48,6 @@ body {
   border-radius: 10px;
 }
 
-.musician-img img {
-  float: right;
-}
-
 @media screen (max-width: 1024px) {
   .navmenu {
     display: flex;
