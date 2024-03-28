@@ -1,0 +1,1 @@
+The Javascript code is embedded directly within the HTML file in the <body></body> element(<script>code-lines</script>).Thank you.
