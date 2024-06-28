@@ -1,13 +1,23 @@
+import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
 import logo from "../assets/logo.png";
 import { navItems } from "../constants";
 
-const Navbar = () => {
+const Navbar = ({ onSignInClick, onSignUpClick }) => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
+  };
+
+  const handleMobileSignInClick = () => {
+    toggleNavbar(); // Close the mobile drawer
+    onSignInClick();
+  };
+
+  const handleMobileSignUpClick = () => {
+    toggleNavbar(); // Close the mobile drawer
+    onSignUpClick();
   };
 
   return (
@@ -26,12 +36,17 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="hidden lg:flex justify-center space-x-12 items-center">
-            <a href="#" className="py-2 px-3 border rounded-md">
+            <a
+              href="#"
+              className="py-2 px-3 border rounded-md"
+              onClick={onSignInClick}
+            >
               Sign In
             </a>
             <a
               href="#"
               className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md"
+              onClick={onSignUpClick}
             >
               Create an account
             </a>
@@ -52,12 +67,17 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="flex space-x-6">
-              <a href="#" className="py-2 px-3 border rounded-md">
+              <a
+                href="#"
+                className="py-2 px-3 border rounded-md"
+                onClick={handleMobileSignInClick}
+              >
                 Sign In
               </a>
               <a
                 href="#"
                 className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800"
+                onClick={handleMobileSignUpClick}
               >
                 Create an account
               </a>
