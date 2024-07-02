@@ -13,10 +13,56 @@ import user5 from "../assets/profile-pictures/user5.jpg";
 import user6 from "../assets/profile-pictures/user6.jpg";
 
 export const navItems = [
-  { label: "Features", href: "#" },
-  { label: "Workflow", href: "#" },
-  { label: "Pricing", href: "#" },
-  { label: "Testimonials", href: "#" },
+  {
+    label: "Features",
+    href: "#features",
+    dropdown: [
+      {
+        label: "Drag-and-Drop Interface",
+        href: "#feature-drag-and-drop-interface",
+      },
+      {
+        label: "Multi-Platform Compatibility",
+        href: "#feature-multi-platform-compatibility",
+      },
+      { label: "Built-In Templates", href: "#feature-built-in-templates" },
+      { label: "Real-time Preview", href: "#feature-real-time-preview" },
+      { label: "Collaboration Tools", href: "#feature-collaboration-tools" },
+      { label: "Analytics Dashboard", href: "#feature-analytics-dashboard" },
+    ],
+  },
+  {
+    label: "Workflow",
+    href: "#workflow",
+    dropdown: [
+      { label: "Code Merge", href: "#workflow-code-merge-made-easy" },
+      { label: "Code Review", href: "##workflow-review-code-without-worry" },
+      {
+        label: "AI Assistance",
+        href: "#workflow-ai-assistance-to-reduce-time",
+      },
+      { label: "Work Sharing", href: "#workflow-share-work-in-minutes" },
+    ],
+  },
+
+  {
+    label: "Pricing",
+    href: "#pricing",
+    dropdown: [
+      { label: "Free Plan", href: "#pricing-free" },
+      { label: "Pro Plan", href: "#pricing-pro" },
+      { label: "Enterprise Plan", href: "#pricing-enterprise" },
+    ],
+  },
+  {
+    label: "Testimonials",
+    href: "#testimonials",
+    dropdown: [
+      { label: "Customer Stories", href: "#testimonials-stories" },
+      { label: "Case Studies", href: "#testimonials-case-studies" },
+      { label: "Video Testimonials", href: "#testimonials-videos" },
+    ],
+  },
 ];
 
 export const testimonials = [

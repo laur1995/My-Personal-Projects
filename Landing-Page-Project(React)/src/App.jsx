@@ -27,6 +27,20 @@ const App = () => {
     setAuthFormOpen(false);
   };
 
+  const handleStartFreeClick = () => {
+    setAuthFormOpen(true);
+    setAuthFormMode("signup");
+  };
+
+  const handleDocumentationClick = () => {
+    const documentationSection = document.getElementById("documentation");
+    if (documentationSection) {
+      documentationSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.log("Redirect to documentation page");
+    }
+  };
+
   return (
     <AuthProvider>
       <Navbar
@@ -34,13 +48,20 @@ const App = () => {
         onSignUpClick={handleSignUpClick}
       />
       <div className="max-w-7xl mx-auto pt-20 px-6">
-        <HeroSection />
+        <HeroSection
+          onStartFreeClick={handleStartFreeClick}
+          onDocumentationClick={handleDocumentationClick}
+        />
         <FeatureSection />
         <Workflow />
         <Pricing />
         <Testimonials />
         <Footer />
-        <AuthForms isOpen={authFormOpen} onClose={handleCloseAuthForm} />
+        <AuthForms
+          isOpen={authFormOpen}
+          onClose={handleCloseAuthForm}
+          initialMode={authFormMode}
+        />
       </div>
     </AuthProvider>
   );

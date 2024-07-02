@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { X } from "lucide-react";
 
-const AuthForms = ({ isOpen, onClose }) => {
-  const [isLogin, setIsLogin] = useState(true);
+const AuthForms = ({ isOpen, onClose, initialMode = "signin" }) => {
+  const [isLogin, setIsLogin] = useState(initialMode === "signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login, signup } = useAuth();
@@ -27,14 +27,8 @@ const AuthForms = ({ isOpen, onClose }) => {
   };
 
   useEffect(() => {
-    if (isOpen) {
-      // Scroll to the top of the form when it opens
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-  }, [isOpen]);
+    setIsLogin(initialMode === "signin");
+  }, [initialMode]);
 
   return (
     isOpen && (
